@@ -66,6 +66,10 @@ textarea {
 }
 
 .saveBtn :hover {
-  font-size: 20px;
+  font-size: 200px;
   transition: all 0.3s ease-in-out;
+}
+
+#testdiv {
+  visibility: hidden; 
 }
