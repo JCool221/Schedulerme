@@ -1,36 +1,48 @@
 var timeDisplayEl = $('#currentDay');
 var nineAM = $('#morning');
-var hourHolderEl = $('#testdiv');
-var thingy = $('#testdiv').text();
-
 // handle displaying the time
 function displayTime() {
   var rightNow = moment().format('MMM DD, YYYY [at] hh:mm:ss a');
   timeDisplayEl.text(rightNow);
   // check the time badge and do function
-  var hour = moment().format('k');
-  hourHolderEl.text(hour);
-  // console.log(hour);
-}
 
+  var currentHour = moment().format('k') 
+  var badgeHour = ($("div#badge").text().trim());
+  switch (true) {
+      case ( currentHour < badgeHour):
+        future();
+        console.log('futurecase');
+        break;
+      case ( currentHour == badgeHour):
+        present();
+        console.log('presentcase');
+        break;
+      case ( currentHour > badgeHour):
+        past();
+        console.log('pastcase');
+        break;
+      
+    }
+}
 // change the Highlight of the schedule bar to the current hour
-function Now () {
-  nineAM.removeClass('future ').addClass('present');
+function present () {
+  nineAM.removeClass('future').removeClass('past').addClass('present');
+  console.log('present');
 }
 
 // change the Highlight of the schedule bar to a past hour
 function past () {
-  nineAM.removeClass('present').addClass('past');
+  nineAM.removeClass('present').removeClass('future').addClass('past');
+  console.log('past');
+
 }
 
 // change the Highlight of the schedule bar to a future hour
 function future () {
-  nineAM.removeClass('past').addClass('future');
+  nineAM.removeClass('past').removeClass('present').addClass('future');
+  console.log('future');
+
 }
 
-function currentHour () {
-  console.log(hourHolderEl);
-}
-var hourNow = $('#hourHolder').text();
   // timer
     setInterval(displayTime, 1000);
