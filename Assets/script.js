@@ -1,16 +1,17 @@
 var timeDisplayEl = $('#currentDay');
 var nineAM = $('#morning');
-var hourHolderEl = $('#testdiv');
-var thingy = $('#testdiv').text();
 
 // handle displaying the time
 function displayTime() {
   var rightNow = moment().format('MMM DD, YYYY [at] hh:mm:ss a');
   timeDisplayEl.text(rightNow);
   // check the time badge and do function
-  var hour = moment().format('k');
-  hourHolderEl.text(hour);
-  // console.log(hour);
+  console.log(moment().format('k'));
+    if (moment().format('k') == 16) {
+      console.log('yay');
+    } else {
+      console.log('boo');
+    }
 }
 
 // change the Highlight of the schedule bar to the current hour
