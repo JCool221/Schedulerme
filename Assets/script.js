@@ -3,6 +3,8 @@ var nineAM = $('#9am');
 var tenAM = $('#10am');
 var elevenAM = $('#11am');
 var twelvePM = $('#12pm');
+var onePM = $('#1pm');
+
 
 // handle displaying the time
 function displayTime() {
@@ -15,34 +17,41 @@ function renderBars() {
   // var badgeHour = ($("div#badge").text().trim());
   // console.log(currentHour);
 
-    if (22>currentHour) {
+    if (9>currentHour) {
           nineAM.removeClass('present').removeClass('future').addClass('past');
-      } else if (22==currentHour) {
+      } else if (9==currentHour) {
           nineAM.removeClass('future').removeClass('past').addClass('present');
-      } else if (22>currentHour) {
+      } else if (9>currentHour) {
           nineAM.removeClass('past').removeClass('present').addClass('future');
       }
-    if (20>currentHour) {
+    if (10>currentHour) {
           tenAM.removeClass('present').removeClass('future').addClass('past');
-      } else if (20==currentHour) {
+      } else if (10==currentHour) {
           tenAM.removeClass('future').removeClass('past').addClass('present');
-      } else if (20>currentHour) {
+      } else if (10>currentHour) {
           tenAM.removeClass('past').removeClass('present').addClass('future');
       }
-    if (21>currentHour) {
+    if (11>currentHour) {
           elevenAM.removeClass('present').removeClass('future').addClass('past');
-      } else if (21==currentHour) {
+      } else if (11==currentHour) {
           elevenAM.removeClass('future').removeClass('past').addClass('present');
-      } else if (21>currentHour) {
+      } else if (11>currentHour) {
           elevenAM.removeClass('past').removeClass('present').addClass('future');
       }
-    if (21>currentHour) {
+    if (12>currentHour) {
           twelvePM.removeClass('present').removeClass('future').addClass('past');
-      } else if (21==currentHour) {
+      } else if (12==currentHour) {
           twelvePM.removeClass('future').removeClass('past').addClass('present');
-      } else if (21>currentHour) {
+      } else if (12>currentHour) {
           twelvePM.removeClass('past').removeClass('present').addClass('future');
       }
+    if (13>currentHour) {
+            onePM.removeClass('present').removeClass('future').addClass('past');
+        } else if (13==currentHour) {
+            onePM.removeClass('future').removeClass('past').addClass('present');
+        } else if (13>currentHour) {
+            onePM.removeClass('past').removeClass('present').addClass('future');
+        }
 
 }   
 
