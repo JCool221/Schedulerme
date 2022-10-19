@@ -18,7 +18,6 @@ function displayTime() {
   // check the time badge and set the bar colors
 function renderBars() {
   var currentHour = moment().format('k') 
-  // var badgeHour = ($("div#badge").text().trim());
 
 // scripts for each of the time blocks
     if (9<currentHour) {
