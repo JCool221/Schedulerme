@@ -19,8 +19,8 @@ function displayTime() {
 function renderBars() {
   var currentHour = moment().format('k') 
   // var badgeHour = ($("div#badge").text().trim());
-  // console.log(currentHour);
 
+// scripts for each of the time blocks
     if (9<currentHour) {
           nineAM.removeClass('present').removeClass('future').addClass('past');
       } else if (9==currentHour) {
@@ -92,10 +92,37 @@ function renderBars() {
         } else if (17>currentHour) {
             fivePM.removeClass('past').removeClass('present').addClass('future');
         }
-
-console.log(currentHour);
 }   
 
-// timer
+// functionality of save buttons
+$('.9amSave').click(function() {
+    localStorage.setItem("9am", (document.getElementById('9am').value));
+});
+$('.10amSave').click(function() {
+    localStorage.setItem("10am", (document.getElementById('10am').value));
+});
+$('.11amSave').click(function() {
+    localStorage.setItem("11am", (document.getElementById('11am').value));
+});
+$('.12pmSave').click(function() {
+    localStorage.setItem("12pm", (document.getElementById('12pm').value));
+});
+$('.1pmSave').click(function() {
+    localStorage.setItem("1pm", (document.getElementById('1pm').value));
+});
+$('.2pmSave').click(function() {
+    localStorage.setItem("2pm", (document.getElementById('2pm').value));
+});
+$('.3pmSave').click(function() {
+    localStorage.setItem("3pm", (document.getElementById('3pm').value));
+});
+$('.4pmSave').click(function() {
+    localStorage.setItem("4pm", (document.getElementById('4pm').value));
+});
+$('.5pmSave').click(function() {
+    localStorage.setItem("5pm", (document.getElementById('5pm').value));
+});
+
+// timers
    setInterval(displayTime, 1000);
    setInterval(renderBars, 1000);
