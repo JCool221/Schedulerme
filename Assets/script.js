@@ -123,6 +123,22 @@ $('.5pmSave').click(function() {
     localStorage.setItem("5pm", (document.getElementById('5pm').value));
 });
 
+// get saved items from local storage on page load
+window.onload = () => {
+    load();
+}
+function load() {
+    document.getElementById('9am').value = localStorage.getItem('9am');
+    document.getElementById('10am').value = localStorage.getItem('10am');
+    document.getElementById('11am').value = localStorage.getItem('11am');
+    document.getElementById('12pm').value = localStorage.getItem('12pm');
+    document.getElementById('1pm').value = localStorage.getItem('1pm');
+    document.getElementById('2pm').value = localStorage.getItem('2pm');
+    document.getElementById('3pm').value = localStorage.getItem('3pm');
+    document.getElementById('4pm').value = localStorage.getItem('4pm');
+    document.getElementById('5pm').value = localStorage.getItem('5pm');
+
+}
 // timers
    setInterval(displayTime, 1000);
    setInterval(renderBars, 1000);
